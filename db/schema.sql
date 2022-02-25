@@ -1,2 +1,4 @@
-DROP DATABASE IF EXISTS motorcycle_club_db;
-CREATE DATABASE motorcycle_club_db;
+
+DROP DATABASE IF EXISTS motoriders_db;
+CREATE DATABASE motoriders_db;
+
