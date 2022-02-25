@@ -41,3 +41,16 @@ Users.hasMany(Attendance, {
 Attendance.belogsTo(Users,{
     foreignerKey: 'id'
 });
+
+// We still need to add associations for Users with Trips and Events
+
+module.exports = {
+    Appointments,
+    Attendance,
+    Contacts,
+    Events,
+    Insurances,
+    Payments,
+    Users,
+    Trips,
+};
