@@ -1,0 +1,63 @@
+[
+    {
+        "type": "admin",
+        "email":"mariopatino@aol.com",
+        "first_name": "Mario",
+        "last_name": "Patino",
+        "nick_name": "Marinio",
+        "date_of_birth": "03/02/1978",
+        "mobile_phone": "5544332211",
+        "tier": 1,
+        "HUG_id": "123qwe456rty",
+        "password": "password12345"
+    },
+    {
+        "type": "member",
+        "email":"miguelsantamaria@aol.com",
+        "first_name": "Miguel",
+        "last_name": "Santamaria",
+        "nick_name": "Santo",
+        "date_of_birth": "05/08/1984",
+        "mobile_phone": "5577889900",
+        "tier": 2,
+        "HUG_id": "098asd765zxc",
+        "password": "password12345"
+    },
+    {
+        "type": "admin",
+        "email":"josevidal0@gmail.com",
+        "first_name": "Jose Vidal",
+        "last_name": "Maza",
+        "nick_name": "Vidal",
+        "date_of_birth": "12/05/1980",
+        "mobile_phone": "5544332211",
+        "tier": 1,
+        "HUG_id": "123qwe456rty",
+        "password": "password12345"
+    },
+    {
+        "type": "member",
+        "email":"eder.ramirez0@aol.com",
+        "first_name": "Eder",
+        "last_name": "Ramirez",
+        "nick_name": "Eder",
+        "date_of_birth": "07/12/1990",
+        "mobile_phone": "5555772211",
+        "tier": 2,
+        "HUG_id": "123qwe456rty",
+        "password": "password12345"
+    },
+    {
+        "type": "member",
+        "email":"nathan.Ag@hotmail.com",
+        "first_name": "Nathan",
+        "last_name": "Ag",
+        "nick_name": "Nathan",
+        "date_of_birth": "06/10/1980",
+        "mobile_phone": "5588772211",
+        "tier": 2,
+        "HUG_id": "123qwe456rty",
+        "password": "password12345"
+    }
+    
+  ]
