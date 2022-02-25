@@ -43,7 +43,7 @@ Trips.init(
             type: DataTypes.FLOAT,
             allowNull: false,
         },
-        hoyel_cost: {
+        hotel_cost: {
             type: DataTypes.FLOAT,
             allowNull: false,
         },
@@ -54,6 +54,10 @@ Trips.init(
         trip_date: {
             type: DataTypes.DATE,
             allowNull: false,
+        },
+        trip_image: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     },
     {
