@@ -1,0 +1,50 @@
+[
+{
+    "trip_name": "Viaje a las piramides",
+    "trip_hours": 2,
+    "trip_days": 1,
+    "trip_kms": 145,
+    "toll_cost": 150.00,
+    "fuel_cost": 500.00,
+    "food_cost": 1200.00,
+    "hotel_cost": 0.00,
+    "difficulty_level": 3,
+    "trip_date": "02/03/2022"
+}, 
+{
+    "trip_name": "Acapulco Fin de Semana",
+    "trip_hours": 5,
+    "trip_days": 3,
+    "trip_kms": 625,
+    "toll_cost": 850.00,
+    "fuel_cost": 1500.00,
+    "food_cost": 6200.00,
+    "hotel_cost": 8000.00,
+    "difficulty_level": 6,
+    "trip_date": "10/06/2022"
+}, 
+{
+    "trip_name": "Cuernavaca Semana Santa",
+    "trip_hours": 2,
+    "trip_days": 7,
+    "trip_kms": 280,
+    "toll_cost": 150.00,
+    "fuel_cost": 200.00,
+    "food_cost": 3000.00,
+    "hotel_cost": 7600.00,
+    "difficulty_level": 7,
+    "trip_date": "18/04/2022"
+}, 
+{
+    "trip_name": "Viaje a las piramides",
+    "trip_hours": 5,
+    "trip_days": 1,
+    "trip_kms": 145,
+    "toll_cost": 150.00,
+    "fuel_cost": 500.00,
+    "food_cost": 1200.00,
+    "hotel_cost": 0.00,
+    "difficulty_level": 3,
+    "trip_date": "02/03/2022"
+}
+]
