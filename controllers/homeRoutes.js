@@ -9,10 +9,10 @@ router.get('/', async (req, res) => {
         const trips = tripsData.map((trip) => trip.get({ plain: true }));
         console.log("getting all trips handlebars", trips);
 
-        /* res.render('homepage', {
+        res.render('homepage', {
             trips,
-        }); */
-        res.send("this is the homepage");
+        }); 
+        // res.send("this is the homepage");
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -25,12 +25,12 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 
         const trip = tripData.get({ plain: true });
 
-        /* res.render('trip', {
+        res.render('trip', {
             ...trip,
             logged_in: req.session.logged_in
-        }); */
+        });
 
-        res.send(trip);
+        // res.send(trip);
     } catch (err) {
         res.status(500).json(err);
     }
