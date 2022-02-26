@@ -1,6 +1,7 @@
 [
 {
     "trip_name": "Viaje a las piramides",
+    "destination": "Teotihuacan, Edo de Mex",
     "trip_hours": 2,
     "trip_days": 1,
     "trip_kms": 145,
@@ -13,6 +14,7 @@
 }, 
 {
     "trip_name": "Acapulco Fin de Semana",
+    "destination": "Acapulco de Juarez, Guerrero",
     "trip_hours": 5,
     "trip_days": 3,
     "trip_kms": 625,
@@ -25,6 +27,7 @@
 }, 
 {
     "trip_name": "Cuernavaca Semana Santa",
+    "destination": "Cuernavaca, Morelos",
     "trip_hours": 2,
     "trip_days": 7,
     "trip_kms": 280,
@@ -33,10 +36,11 @@
     "food_cost": 3000.00,
     "hotel_cost": 7600.00,
     "difficulty_level": 7,
-    "trip_date": "18/04/2022"
+    "trip_date": "08/04/2022"
 }, 
 {
-    "trip_name": "Viaje a las piramides",
+    "trip_name": "Vamos a pescar Truchas",
+    "destination": "Rio Frio, Morelos",
     "trip_hours": 5,
     "trip_days": 1,
     "trip_kms": 145,

@@ -42,7 +42,7 @@ User.init(
             allowNull: true,
         },
         date_of_birth: {
-            type: DataTypes.date,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         mobile_phone: {

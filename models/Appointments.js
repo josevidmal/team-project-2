@@ -26,10 +26,12 @@ Appointments.init(
         meet_hour: {
             type: DataTypes.DATE,
             allowNull:false,
+            defaultValue: DataTypes.NOW,
         },
         departure_hour: {
             type: DataTypes.DATE,
             allowNull:false,
+            defaultValue: DataTypes.NOW,
         },
     },
     {
