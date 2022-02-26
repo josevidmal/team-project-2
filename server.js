@@ -24,6 +24,7 @@ const sess = {
     })
 };
 
+app.use(helmet());
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
