@@ -69,7 +69,9 @@ router.get('/signup', (req, res) => {
         return;
     }
 
-    res.render('signup');
+    res.render('register');
 });
+
+
 
 module.exports = router;
