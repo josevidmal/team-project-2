@@ -31,10 +31,12 @@ Payments.init(
         period_begind: {
             type: DataTypes.DATE,
             allowNull:false,
+            defaultValue: DataTypes.NOW,
         },
         period_ends: {
             type: DataTypes.DATE,
             allowNull: false,
+            defaultValue: DataTypes.NOW,
         },
     },
     {

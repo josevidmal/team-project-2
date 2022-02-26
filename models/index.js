@@ -11,7 +11,7 @@ Users.hasMany(Insurances, {
     foreignerKey: 'id',
     onDelete: 'CASCADE'
 });
-Insurances.belogsTo(Users,{
+Insurances.belongsTo(Users,{
     foreignerKey: 'id',
 });
 
@@ -20,7 +20,7 @@ Users.hasMany(Contacts,{
     onDelete: 'CASCADE',
 });
 
-Contacts.belogsTo(Users, {
+Contacts.belongsTo(Users, {
     foreignerKey:'id'
 });
 
@@ -29,7 +29,7 @@ Users.hasMany(Payments,{
     onDelete: 'CASCADE'
 });
 
-Payments.belogsTo(Users, {
+Payments.belongsTo(Users, {
     foreignerKey: 'id'
 });
 
@@ -38,6 +38,6 @@ Users.hasMany(Attendance, {
     onDelete: 'CASCADE'
 });
 
-Attendance.belogsTo(Users,{
+Attendance.belongsTo(Users,{
     foreignerKey: 'id'
 });
