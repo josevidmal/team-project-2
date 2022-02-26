@@ -4,24 +4,29 @@ const Trips = require('../../models/Trips');
 router.get('/', async (req, res) => {
   try {
     const allTrips = await Trips.findAll();
+    
+    return res.status(200).json(allTrips);
+
   } catch (err) {
     res.status(400).json(err);
     return;
   }
-  return res.status(200).json(allTrips);
+  
 
 });
 
 
 router.get('/:id', async (req, res) => {
   try {
-    const tripData = await Trips.findByPk(req.param.id);
+    const tripData = await Trips.findByPk(req.params.id);
+
+    return res.status(200).json(tripData);
+
   } catch (err) {
     res.status(400).json(err);
     return;
   }
-  return res.status(200).json(tripData);
-
+  
 });
 
 router.post('/', async (req, res) => {
