@@ -1,20 +1,66 @@
 {{!-- LOGIN --}}
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class=" d-flex align-items-center gradient-custom-2">
+              <div class="text-dark">
+                <h2 class="mb-4">We are more than just a company</h2>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+        
       </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+         
+        <form>
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3"><h2>Sign </h2></p>
+          </div>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+             <label class="form-label" for="email">Email:</label>
+            <input type="email" id="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+           
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+             <label class="form-label" for="password">Password:</label>
+            <input type="password" id="password" class="form-control form-control-lg"
+              placeholder="Enter password" />
+           
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="remember-me" />
+              <label class="form-check-label" for="remember-me">
+                Remember me
+              </label>
+            </div>
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Sing In</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                class="link-danger">Register</a></p>
+          </div>
+
+        </form>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
+    </div>
   </div>
+ 
+  </div>
+</section>
+
 
 <script src="/js/login.js"></script>

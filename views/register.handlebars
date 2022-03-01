@@ -1,59 +1,80 @@
-  {{!-- REGISTER --}}
-  <div class="login-card">
-    <h2 class="page-title">If you don't have an account, create one Here</h2>
-    <form class="form signup-form">
-      {{!-- username --}}
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      {{!-- email --}}
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      {{!-- password --}}
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      {{!-- first name --}}
-      <div class="form-group">
-        <label for="first_name">First Name:</label>
-        <input class="form-input" type="text" id="first_name" />
-      </div>
-      {{!-- last name --}}
-      <div class="form-group">
-        <label for="last_name">Last Name:</label>
-        <input class="form-input" type="text" id="last_name" />
-      </div>
-      {{!-- nickname --}}
-      <div class="form-group">
-        <label for="nickname">Nickname:</label>
-        <input class="form-input" type="text" id="nickname" />
-      </div>
-      {{!-- DOB --}}
-      <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input class="form-input" type="text" id="dob" />
-      </div>
-      {{!-- Mobile phone --}}
-      <div class="form-group">
-        <label for="mobile_phone">Mobile Phone:</label>
-        <input class="form-input" type="number" id="mobile_phone" />
-      </div>
-      {{!-- HOG ID --}}
-      <div class="form-group">
-        <label for="hog_id">HOG Number:</label>
-        <input class="form-input" type="text" id="hog_id" />
-      </div>
-      
-      {{!-- SIGNUP BUTTON --}}
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+        <a class="nav-link active ms-0" href="/" target="__blank">Profile</a>
+        
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-4" src="images/perfil.jpg" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                    <!-- Profile picture upload button-->
+                    <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="button">Upload image</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header text-center"><h2> Create Account</h2> </div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (username)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputUsername">Username </label>
+                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">First name</label>
+                                <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">Last name</label>
+                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name">
+                            </div>
+                        </div>
+                     
+                        
+                        <!-- Form Group (email address)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                            <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address">
+                        </div>
+
+                         <!-- Form Group (Password)-->
+                        <div class="mb-3">
+                            <label class="small mb-1" for="password">Password</label>
+                            <input class="form-control" id="password" type="email" placeholder="Password *">
+                            <label class="small mb-1" for="confirpassword">Confirmar Password</label>
+                            <input class="form-control" id="password" type="email" placeholder="Confirmar Password *">
+                        </div>
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (phone number)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPhone">Phone number</label>
+                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number">
+                            </div>
+                            
+                        </div>
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="button">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="/js/register.js"></script>

@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav {
+  min-height: 120px;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
+  background: #082c4e;
+}
+h1 {
+  color: blue;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+p {
+  color: red;
+}
