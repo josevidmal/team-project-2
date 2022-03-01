@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Users, Trips, Events } = require('../models/index');
 const withAuth = require('../utils/auth');
+const isAdmin = require('../utils/admin')
 
 router.get('/', async (req, res) => {
     try {
