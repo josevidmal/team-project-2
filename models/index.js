@@ -6,43 +6,46 @@ const Insurances = require('./Insurances');
 const Payments = require('./Payments');
 const Trips = require('./Trips');
 const Users = require('./User');
+const UserTrips = require('./UserTrips');
 
 Users.hasMany(Insurances, {
-    foreignerKey: 'id',
+    foreignKey: 'id',
     onDelete: 'CASCADE'
 });
 Insurances.belongsTo(Users,{
-    foreignerKey: 'id',
+    foreignKey: 'id',
 });
 
 Users.hasMany(Contacts,{
-    foreignerKey:'id',
+    foreignKey:'id',
     onDelete: 'CASCADE',
 });
 
 Contacts.belongsTo(Users, {
-    foreignerKey:'id'
+    foreignKey:'id'
 });
 
 Users.hasMany(Payments,{
-    foreignerKey: 'id',
+    foreignKey: 'id',
     onDelete: 'CASCADE'
 });
 
 Payments.belongsTo(Users, {
-    foreignerKey: 'id'
+    foreignKey: 'id'
 });
 
 Users.hasMany(Attendance, {
-    foreignerKey: 'id',
+    foreignKey: 'id',
     onDelete: 'CASCADE'
 });
 
 Attendance.belongsTo(Users,{
-    foreignerKey: 'id'
+    foreignKey: 'id'
 });
 
-// We still need to add associations for Users with Trips and Events
+Users.belongsToMany(Trips, { through: UserTrips, foreignKey: 'user_id' });
+
+Trips.belongsToMany(Users, { through: UserTrips, foreignKey: 'trips_trip_id' });
 
 module.exports = {
     Appointments,
