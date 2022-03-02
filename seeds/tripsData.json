@@ -10,7 +10,8 @@
     "food_cost": 1200.00,
     "hotel_cost": 0.00,
     "difficulty_level": 3,
-    "trip_date": "02/03/2022"
+    "trip_date": "02/03/2022",
+    "trip_image": "PHOTO-0001.jpg"
 }, 
 {
     "trip_name": "Acapulco Fin de Semana",
@@ -23,7 +24,8 @@
     "food_cost": 6200.00,
     "hotel_cost": 8000.00,
     "difficulty_level": 6,
-    "trip_date": "10/06/2022"
+    "trip_date": "10/06/2022",
+    "trip_image": "PHOTO-0002.jpg"
 }, 
 {
     "trip_name": "Cuernavaca Semana Santa",
@@ -36,7 +38,8 @@
     "food_cost": 3000.00,
     "hotel_cost": 7600.00,
     "difficulty_level": 7,
-    "trip_date": "08/04/2022"
+    "trip_date": "08/04/2022",
+    "trip_image": "PHOTO-0003.jpg"
 }, 
 {
     "trip_name": "Vamos a pescar Truchas",
@@ -49,6 +52,7 @@
     "food_cost": 1200.00,
     "hotel_cost": 0.00,
     "difficulty_level": 3,
-    "trip_date": "02/03/2022"
+    "trip_date": "02/03/2022",
+    "trip_image": "PHOTO-0004.jpg"
 }
 ]
