@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const isAdmin = require('../../utils/admin');
 const { Users } = require('../../models/index');
 
 router.post('/signup', async (req, res) => {
@@ -42,6 +43,16 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'email or password is incorrect, try again' });
             return;
         }
+
+        if (isAdmin) {
+            req.session.save(() => {
+                req.session.user_id = userData.id;
+                req.session.logged_in = true;
+                req.session.isAdmin = true;
+                
+                res.json({ user: userData, message: 'You have logged in as admin' });
+            })
+        } 
 
         req.session.save(() => {
             req.session.user_id = userData.id;
