@@ -47,9 +47,19 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+
+        let isAdmin = false;
+        if (userData.type == "admin")
+            isAdmin = true;
+        console.log("isAdmin:", isAdmin);
+
         req.session.save(() => {
+            req.session.isAdmin = isAdmin;
             req.session.user_id = userData.id;
             req.session.logged_in = true;
+
+
+            console.log('User type', userData.type);
 
             res.json({ user: userData, message: 'You have logged in' });
         })
