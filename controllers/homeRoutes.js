@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             trips,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin
         }); 
         // res.send("this is the homepage");
     } catch (err) {
@@ -29,7 +30,8 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 
         res.render('tripInfo', {
             ...trip,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin
         });
 
         // res.send(trip);
@@ -49,7 +51,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
         res.render('profile', {
             ...user,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin
         });
     } catch (err) {
         res.status(500).json(err);
