@@ -54,7 +54,6 @@ Trips.init(
         trip_date: {
             type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: DataTypes.NOW,
         },
         trip_image: {
             type: DataTypes.STRING,
