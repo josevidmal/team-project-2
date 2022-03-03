@@ -66,7 +66,7 @@ router.get('/profile/mytrips', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id,
             },
-            include: [
+            /* include: [
                 {
                     model: Trips,
                     attributes: ['trip_id', 'trip_name', 'destination', 'trip_date', 'trip_image'],
@@ -75,19 +75,36 @@ router.get('/profile/mytrips', withAuth, async (req, res) => {
                     model: Users,
                     attributes: ['id']
                 }
-            ],
+            ],*/
         });
+
+        let trips = [];
+
+        userTripsData.forEach(trip => {
+            trips.push(trip.dataValues.trip_id);
+        });
+
+        const tripData = await Trips.findAll({
+            where: {
+                trip_id: trips
+            }
+        })
+
+        const parsedTripsData = tripData.map((trip) => trip.dataValues);
+        console.log(parsedTripsData)
         
-        const userTrips = userTripsData.map((trip) => trip.get({ plain: true }));
+        // const userTrips = userTripsData.map((trip) => trip.get({ plain: true }));
 
         res.render('myTrips', {
-            userTrips,
-            logged_in: req.session.logged_in
+            parsedTripsData,
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin,
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
@@ -108,7 +125,10 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/newTrip', withAuth, isAdmin, (req,res) => {
-    res.render('newTrip');
+    res.render('newTrip', {
+        logged_in: req.session.logged_in,
+        isAdmin: req.session.isAdmin,
+    });
     return;
 });
 
