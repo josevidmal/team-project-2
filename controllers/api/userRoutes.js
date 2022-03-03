@@ -1,5 +1,9 @@
 const router = require('express').Router();
-const { Users } = require('../../models/index');
+const withAuth = require('../../utils/auth');
+const isAdmin = require('../../utils/admin');
+const { Users, UserTrips } = require('../../models/index');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -43,12 +47,21 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        let isAdmin = false;
+        if (userData.type == "admin")
+            isAdmin = true;
+        console.log("isAdmin:", isAdmin);
+
         req.session.save(() => {
+            req.session.isAdmin = isAdmin;
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
+            console.log('User type', userData.type);
+
             res.json({ user: userData, message: 'You have logged in' });
-        });
+        })
+
     } catch (err) {
         res.status(400).json(err);
     }
@@ -64,5 +77,18 @@ router.post('/logout', (req, res) => {
       res.status(404).end();
     }
   });
+
+router.post('/trips', withAuth, async (req, res) => {
+    try {
+        const userTripsData = await UserTrips.create({
+            user_id: req.session.user_id,
+            trip_id: req.body.trip_id,
+        });
+
+        res.status(200).json(userTripsData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
   module.exports = router;
