@@ -16,22 +16,21 @@ const newTripHandler = async (event) => {
     const trip_date = document.getElementById('trip_date').value.trim();
 
 
-    //if (trip_name && destination && trip_hours && trip_days && trip_kms &&toll_cost && fuel_cost && food_cost && difficulty_level && trip_date && hotel_cost) {
+    if (trip_name && destination && trip_hours && trip_days && trip_kms && toll_cost && fuel_cost && food_cost && difficulty_level && trip_date && hotel_cost) {
         console.log('dentro del if');
         const response = await fetch('/api/newTrip/', {
              method: 'POST',
-             body: JSON.stringify({ trip_name , destination , trip_hours , trip_days , trip_kms , toll_cost , fuel_cost , food_cost, hotel_cost , difficulty_level , trip_date }),
+             body: JSON.stringify({ trip_name, destination, trip_hours, trip_days, trip_kms, toll_cost, fuel_cost, food_cost, hotel_cost, difficulty_level, trip_date }),
              headers: { 'Content-Type': 'application/json' },
-         });
+        });
 
-         if (response.ok) {
+        if (response.ok) {
             console.log ('respuesta correcta');
+            document.location.replace('/');
         } else {
             alert('Could not add new Trip.');
         }
-   // }else{
-   //     console.log ('en el else')
-   // }
+    }
 };
 
 document.querySelector('#new_trip').addEventListener('submit', newTripHandler);

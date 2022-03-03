@@ -1,13 +1,11 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const isAdmin = require('../../utils/admin');
-const { Trip } = require('../../models/index');
-const req = require('express/lib/request');
-const res = require('express/lib/response');
+const { Trips } = require('../../models/index');
 
-router.post('/newTrip', withAuth, isAdmin, async (req, res) => {
+router.post('/', withAuth, isAdmin, async (req, res) => {
     try {
-        const newTrip = await Trip.create({
+        const newTrip = await Trips.create({
             trip_name: req.body.trip_name,
             destination: req.body.destination,
             trip_hours: req.body.trip_hours,
@@ -18,6 +16,7 @@ router.post('/newTrip', withAuth, isAdmin, async (req, res) => {
             food_cost: req.body.food_cost,
             hotel_cost: req.body.hotel_cost,
             difficulty_level: req.body.difficulty_level,
+            trip_date: req.body.trip_date,
             trip_image: req.body.trip_image
         });
         res.status(200).json(newTrip);

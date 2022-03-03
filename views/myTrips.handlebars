@@ -1,11 +1,11 @@
 <section>
-    <h1>In this view you should be able to see the trips you are enrolled</h1>
-    {{#each userTrips as |userTrip|}}
+    <h1>My Trips</h1>
+    {{#each parsedTripsData as |data|}}
     <section class="mytrips">
-        <h2><a href="/trip/{{trip_id}}">{{trips.trip_name}}</a></h2>
-        <h4>Destination: {{trips.destination}}</h4>
-        <h4>Date: {{format_date trips.trip_date}}</h4>
-        <img src="/images/{{trips.trip_image}}" alt="{{trips.trip_name}}">
+        <h2><a href="/trip/{{trip_id}}">{{data.trip_name}}</a></h2>
+        <h4>Destination: {{data.destination}}</h4>
+        <h4>Date: {{format_date data.trip_date}}</h4>
+        <img src="/images/{{data.trip_image}}" alt="{{data.trip_name}}">
     </section>
     {{/each}}
 </section>
