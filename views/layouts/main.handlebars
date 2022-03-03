@@ -14,9 +14,13 @@
         <header class="header" id="header">
             <nav>
                 <ul>
+                    {{#if logged_in}}
+                    <li><a href="/">All Trips</a></li>
+                    {{else}}
                     <li><a href="/">Home</a></li>
+                    {{/if}}
                     <li><a href="/profile">Profile</a></li>
-                    <li><a href="/trips">Trips</a></li>
+                    <li><a href="/profile/mytrips">My Trips</a></li>
                     {{#if logged_in}}
                         <li><a href="/" id="logout">Logout</a></li>
                     {{else}}
