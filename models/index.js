@@ -45,7 +45,7 @@ Attendance.belongsTo(Users,{
 
 Users.belongsToMany(Trips, { through: UserTrips, foreignKey: 'user_id' });
 
-Trips.belongsToMany(Users, { through: UserTrips, foreignKey: 'trips_trip_id' });
+Trips.belongsToMany(Users, { through: UserTrips, foreignKey: 'trip_id' });
 
 module.exports = {
     Appointments,
@@ -56,4 +56,5 @@ module.exports = {
     Payments,
     Users,
     Trips,
+    UserTrips,
 };
