@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!--Normalize css will reset the browser to original defaults permitting easier styling.-->
     <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <!--Favicon icon for the header part-->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/favicon_io/favicon.ico"
+    />
     <!--Animation stylesheet imported from cdnjs-->
     <link
       rel="stylesheet"
@@ -21,10 +27,9 @@
       <nav>
         <img
           id="harl-logo"
-          src="./assets/images/Logo_moto_club.jpg"
+          src="./assets/images/Logo_MTC.png"
           alt="An image representing the harley davidson logo."
         />
-
         <ul>
           <li><a href="#about-me" class="nav-link">Login</a></li>
 
@@ -39,75 +44,109 @@
 
     <!--The core introduction section will show a quick paragraph summarizing what the page will show as well as my avatar-->
     <section class="core-intro">
-      <!--The animate class will include the specific animation commands we want to impose on each element-->
-      <img
-        class="animate__animated animate__lightSpeedInRight"
-        src="./assets/images/harley_test.jpg"
-        alt="image of a motorcycle, currently as a placeholder"
-      />
+      <!-- Slideshow container -->
+      <!-- Alternate animation animate__animated animate__faster animate__rollIn-->
+      <div
+        class="slideshow-container animate__animated animate__faster animate__shakeX animate__bounceInRight"
+        ext
+        --
+      >
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="./assets/images/barril_foto.jpg" style="width: 100%" />
+          <div
+            class="core animate__animated animate__shakeX animate__bounceInRight"
+            style="display: block"
+          >
+            <h2 class="core-title">sobre</h2>
+            <p class="core-text">Bienvenidos ..............................</p>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="./assets/images/foto_desierto.jpg" style="width: 100%" />
+          <div
+            class="core animate__animated animate__shakeX animate__bounceInLeft"
+            style="display: block"
+          >
+            <h2 class="core-title">sobre</h2>
+            <p class="core-text">Parte dos ..............................</p>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <a
+            href="https://www.google.com/maps/place/Alh%C3%B3ndiga+de+Granaditas,+Zona+Centro,+36000+Guanajuato,+Gto./@21.0188021,-101.2600234,17z/data=!3m1!4b1!4m5!3m4!1s0x842b7408d3b4699d:0xfae636f5532c4843!8m2!3d21.0187971!4d-101.2578347"
+          >
+            <img src="./assets/images/gto_alhondiga.jpg" style="width: 100%" />
+          </a>
+          <div
+            class="core animate__animated animate__shakeX animate__bounceInRight"
+            style="display: block"
+          >
+            <h2 class="core-title">sobre</h2>
+            <p class="core-text">Parte tres ..............................</p>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <img src="./assets/images/stitch_moto.jpg" style="width: 100%" />
+          <div
+            class="core animate__animated animate__shakeX animate__bounceInLeft"
+            style="display: block"
+          >
+            <h2 class="core-title">sobre</h2>
+            <p class="core-text">Parte cuatro ..............................</p>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <img
+            src="./assets/images/ESMERALDA_RALLY_2022.png"
+            style="width: 100%"
+          />
+          <div
+            class="core animate__animated animate__shakeX animate__bounceInRight"
+            style="display: block"
+          >
+            <h2 class="core-title">sobre</h2>
+            <p class="core-text">Parte cinco ..............................</p>
+          </div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+
+      <br />
+
+      <!--
       <div
         class="core animate__animated animate__shakeX animate__bounceInRight"
       >
         <h2 class="core-title">sobre</h2>
         <p class="core-text">Bienvenidos ..............................</p>
       </div>
-    </section>
 
-    <!--Contact section-->
-    <section class="contact" id="contact">
-      <h2>Ponte en contacto</h2>
-      <div class="contact-form-container">
-        <div class="contact-form">
-          <!--Form will link directly to an API service which will then redirect the message to my email, pending a replacement-->
-          <form action="https://formspree.io/f/xnqwpaql" method="POST">
-            <div class="form-control">
-              <label for="name">Nombre</label>
-              <input
-                type="text"
-                id="name"
-                name="sender-name"
-                placeholder="Ingrese su Nombre"
-                class="input-field"
-                required
-              />
-            </div>
-            <div class="form-control">
-              <label for="email">Correo</label>
-              <input
-                type="email"
-                id="email"
-                name="sender-email"
-                placeholder="Ingrese su Correo"
-                class="input-field"
-                required
-              />
-            </div>
-            <div class="form-control">
-              <label for="message">Mensaje</label>
-              <textarea
-                id="message"
-                cols="60"
-                rows="10"
-                placeholder="Ingrese su Mensaje"
-                name="message"
-                class="input-field"
-                required
-              ></textarea>
-            </div>
-            <input
-              type="submit"
-              value="Enviar"
-              id="submit-btn"
-              class="submit-btn"
-            />
-          </form>
-        </div>
-      </div>
+      -->
     </section>
 
     <!--Scroll up button-->
     <div class="scroll-up" id="scroll-up">
-      <a href="#header" class="nav-link">
+      <a href="#header" class="button-link">
         <img
           src="assets/images/up_arrow-modified.png"
           class="button-icon up-arrow"
@@ -117,10 +156,7 @@
     </div>
 
     <footer>
-      <p class="copy">
-        Grupo .....
-        <a href="#" target="_blank"></a>
-      </p>
+      <p>Motorcycle Club</p>
     </footer>
 
     <!--Scripts required for the menu button to appear in mobile devices -->
@@ -133,5 +169,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script src="/assets/js/handlebars-v4.7.7.js"></script>
   </body>
 </html>
