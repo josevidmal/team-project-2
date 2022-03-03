@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users, Trips, Events } = require('../models/index');
+const { Users, Trips, UserTrips } = require('../models/index');
 const withAuth = require('../utils/auth');
 const isAdmin = require('../utils/admin')
 
@@ -28,7 +28,7 @@ router.get('/trip/:id', withAuth, async (req, res) => {
 
         const trip = tripData.get({ plain: true });
 
-        res.render('trip', {
+        res.render('tripInfo', {
             ...trip,
             logged_in: req.session.logged_in,
             isAdmin: req.session.isAdmin
@@ -53,6 +53,36 @@ router.get('/profile', withAuth, async (req, res) => {
             ...user,
             logged_in: req.session.logged_in,
             isAdmin: req.session.isAdmin
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/profile/mytrips', withAuth, async (req, res) => {
+    try {
+        console.log(req.session.user_id);
+        const userTripsData = await UserTrips.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: [
+                {
+                    model: Trips,
+                    attributes: ['trip_id', 'trip_name', 'destination', 'trip_date', 'trip_image'],
+                },
+                {
+                    model: Users,
+                    attributes: ['id']
+                }
+            ],
+        });
+        
+        const userTrips = userTripsData.map((trip) => trip.get({ plain: true }));
+
+        res.render('myTrips', {
+            userTrips,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
