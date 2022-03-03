@@ -107,6 +107,10 @@ router.get('/signup', (req, res) => {
     res.render('register');
 });
 
+router.get('/newTrip', withAuth, isAdmin, (req,res) => {
+    res.render('newTrip');
+    return;
+});
 
 
 module.exports = router;
