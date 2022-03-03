@@ -1,10 +1,7 @@
-const User = require("../models/User");
-
 const isAdmin = (req, res, next) => {
-    // If the user is not logged in, redirect the request to the login route
-
-    if (userAdmin.type === "admin" && req.session.logged_in ) {
-      res.render('newTrip');
+    // If the user is not Admin, redirect the request to the profile route
+    if (!req.session.isAdmin) {
+      res.redirect('/profile');
     } else {
       next();
     }
