@@ -1,70 +1,138 @@
-{{!-- NEW TRIP --}}
-<div>
-  <div class="login-card">
-    <h2 class="page-title">Create new event HERE</h2>
-    <form class="form signup-form" id="new_trip">
-      {{!-- TRIP NAME --}}
-      <div class="form-group">
-        <label for="trip_name">Trip:</label>
-        <input class="form-input" type="text" id="trip_name" />
+<div class="container">
+    <div class="main-body">
+      <nav aria-label="breadcrumb" class="main-breadcrumb text-center container navbar-dark">
+        <h2>Create new event here</h2>
+      </nav>
+
+      <div class="row gutters-sm justify-content-center">
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              {{!-- NEW TRIP --}}
+              <div>
+                <div class="login-card">
+                  <form class="form signup-form" id="new_trip">
+                    {{!-- TRIP NAME --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"> <label for="trip_name">Trip:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-control" type="text" id="trip_name"/>
+                      </div>
+                    </div>
+
+                    {{!-- DESTINATION --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="trip_destination">Destination:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="trip_destination" />
+                      </div>
+                    </div>
+
+                    {{!-- EST. TIME --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="time">Est. Time:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="est_time"/>
+                      </div>
+                    </div>
+
+                    {{!-- EST. DAYS --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="est_days">Est. Days:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="est_days" />
+                      </div>
+                    </div>
+
+                    {{!-- EST. KMS --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="est_kms">Kms:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="est_kms" />
+                      </div>
+                    </div>
+
+                    {{!-- TOLLS --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="tolls">Tolls:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="tolls" />
+                      </div>
+                    </div>
+
+                    {{!-- FUEL --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="fuel_cost">Aprox Fuel Cost:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="fuel_cost" />
+                      </div>
+                    </div>
+
+                    {{!-- FOOD --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="food_cost">Aprox Food Cost:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="food_cost" />
+                      </div>
+                    </div>
+
+                    {{!-- HOTEL --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="hotel_cost">Aprox Hotel Cost:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="hotel_cost" />
+                      </div>
+                    </div>
+
+                    {{!-- Difficulty --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="difficulty">Difficulty:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="text" id="difficulty" />
+                      </div>
+                    </div>
+
+                    {{!-- DATE --}}
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0"><label for="trip_date">Trip Date:</label></h6>
+                      </div>
+                      <div class="col-sm-3">
+                        <input class="form-input" type="date" id="trip_date" />
+                      </div>
+                    </div>
+
+                    {{!-- SIGNUP BUTTON --}}
+                    <div class="form-group">
+                      <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
       </div>
-      {{!-- DESTINATION --}}
-      <div class="form-group">
-        <label for="trip_destination">Destination:</label>
-        <input class="form-input" type="text" id="trip_destination" />
-      </div>
-      {{!-- EST. TIME --}}
-      <div class="form-group">
-        <label for="time">Est. Time:</label>
-        <input class="form-input" type="text" id="est_time" />
-      </div>
-      {{!-- EST. DAYS --}}
-      <div class="form-group">
-        <label for="est_days">Est. Days:</label>
-        <input class="form-input" type="text" id="est_days" />
-      </div>
-      {{!-- EST. KMS --}}
-      <div class="form-group">
-        <label for="est_kms">Kms:</label>
-        <input class="form-input" type="text" id="est_kms" />
-      </div>
-      {{!-- TOLLS --}}
-      <div class="form-group">
-        <label for="tolls">Tolls:</label>
-        <input class="form-input" type="text" id="tolls" />
-      </div>
-      {{!-- FUEL --}}
-      <div class="form-group">
-        <label for="fuel_cost">Aprox Fuel Cost:</label>
-        <input class="form-input" type="text" id="fuel_cost" />
-      </div>
-      {{!-- FOOD --}}
-      <div class="form-group">
-        <label for="food_cost">Aprox Food Cost:</label>
-        <input class="form-input" type="text" id="food_cost" />
-      </div>
-      {{!-- HOTEL --}}
-      <div class="form-group">
-        <label for="hotel_cost">Aprox Hotel Cost:</label>
-        <input class="form-input" type="text" id="hotel_cost" />
-      </div>
-      {{!-- Difficulty --}}
-      <div class="form-group">
-        <label for="difficulty">Difficulty:</label>
-        <input class="form-input" type="text" id="difficulty" />
-      </div>
-      {{!-- DATE --}}
-      <div class="form-group">
-        <label for="trip_date">Trip Date:</label>
-        <input class="form-input" type="date" id="trip_date" />
-      </div>
-      
-      {{!-- SIGNUP BUTTON --}}
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit" id="submitBtn">Submit</button>
-      </div>
-    </form>
-  </div>
-</div>
+
 
 <script src="/js/newTrip.js"></script>

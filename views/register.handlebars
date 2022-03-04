@@ -1,54 +1,70 @@
-  {{!-- REGISTER --}}
-<div>
-  <div class="login-card">
-    <h2 class="page-title">If you don't have an account, create one Here</h2>
+{{!-- REGISTER --}}
+<div class="container-xl px-4 mt-4">
+  <div class="row justify-content-center">
+  <div class="login-card col-xl-8">
+    <div class="card mb-4">
+    <h2 class="page-title card-header text-center">Create an account</h2>
+     <div class="card-body">
     <form class="form signup-form" id="user-signup">
       {{!-- email --}}
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+      <div class="form-group mb-3">
+        <label class="small mb-1" for="email-signup">Email:</label>
+        <input class="form-input form-control" type="text" id="email-signup" />
       </div>
       {{!-- password --}}
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+      <div class="form-group mb-3">
+        <label class="small mb-1" for="password-signup">Password:</label>
+        <input class="form-input form-control" type="password" id="password-signup" />
       </div>
+
+      <div class="row gx-3 mb-3">
       {{!-- first name --}}
-      <div class="form-group">
-        <label for="first_name">First Name:</label>
-        <input class="form-input" type="text" id="first_name" />
+      <div class="form-group col-md-6">
+        <label class="small mb-1" for="first_name">First Name:</label>
+        <input class="form-input form-control" type="text" id="first_name" />
       </div>
       {{!-- last name --}}
-      <div class="form-group">
-        <label for="last_name">Last Name:</label>
-        <input class="form-input" type="text" id="last_name" />
+      <div class="form-group col-md-6">
+        <label class="small mb-1" for="last_name">Last Name:</label>
+        <input class="form-input form-control" type="text" id="last_name" />
       </div>
+      </div> 
+    <div class="row gx-3 mb-3">
       {{!-- nickname --}}
-      <div class="form-group">
-        <label for="nickname">Nickname:</label>
-        <input class="form-input" type="text" id="nickname" />
+      <div class="form-group col-md-6">
+        <label class="small mb-1 " for="nickname">Nickname:</label>
+        <input class="form-input form-control" type="text" id="nickname" />
       </div>
       {{!-- DOB --}}
-      <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input class="form-input" type="date" id="dob" />
+      <div class="form-group col-md-6">
+        <label class="small mb-1" for="dob">Date of Birth:</label>
+        <input class="form-input form-control" type="date" id="dob" />
       </div>
+    </div>
+
+      <div class="row gx-3 mb-3">
       {{!-- Mobile phone --}}
-      <div class="form-group">
-        <label for="mobile_phone">Mobile Phone:</label>
-        <input class="form-input" type="text" id="mobile_phone" />
-      </div>
+         <div class="form-group col-md-6">
+           <label class="small mb-1" for="mobile_phone">Mobile Phone:</label>
+           <input class="form-input form-control" type="text" id="mobile_phone" />
+         </div>
       {{!-- HOG ID --}}
-      <div class="form-group">
-        <label for="hog_id">HOG Number:</label>
-        <input class="form-input" type="text" id="hog_id" />
+         <div class="form-group col-md-6">
+           <label class="small mb-1" for="hog_id">HOG Number:</label>
+           <input class="form-input form-control" type="text" id="hog_id" />
+         </div>
       </div>
-      
+
       {{!-- SIGNUP BUTTON --}}
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+
+      <div class="form-group text-center">
+        <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="submit">sign up</button>
       </div>
+
     </form>
+     </div>
+  </div>
+  </div>
   </div>
 </div>
 
