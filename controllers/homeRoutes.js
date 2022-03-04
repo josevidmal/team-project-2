@@ -137,5 +137,12 @@ router.get('/newTrip', withAuth, isAdmin, (req,res) => {
     return;
 });
 
+router.get('/newTrip/addimage', withAuth, isAdmin, (req, res) => {
+    res.render('addImage', {
+        logged_in: req.session.logged_in,
+        isAdmin: req.session.isAdmin,
+    });
+});
+
 // MODULE EXPORT
 module.exports = router;

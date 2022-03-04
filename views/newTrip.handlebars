@@ -2,7 +2,7 @@
 <div>
   <div class="login-card">
     <h2 class="page-title">Create new event HERE</h2>
-    <form class="form signup-form" id="new_trip" enctype="multipart/form-data">
+    <form class="form signup-form" id="new_trip">
       {{!-- TRIP NAME --}}
       <div class="form-group">
         <label for="trip_name">Trip:</label>
@@ -56,11 +56,7 @@
       {{!-- DATE --}}
       <div class="form-group">
         <label for="trip_date">Trip Date:</label>
-        <input class="form-input" type="date" id="trip_date" />
-      </div>
-      {{!-- IMAGE --}} 
-      <div class="form-group">
-        <input type="file" name="image_input" accept="image/*" id="uploadImage">
+        <input class="form-input" type="datetime-local" id="trip_date" />
       </div>
       
       {{!-- SIGNUP BUTTON --}}
