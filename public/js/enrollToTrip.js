@@ -1,3 +1,4 @@
+// FUNCTION ALLOWS USER TO ENROLL TO A TRIP
 const enrollToTrip = async (event) => {
     event.preventDefault();
 

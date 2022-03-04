@@ -1,4 +1,8 @@
-console.log ('en el script');
+// FUNCTION ALLOWS USER WITH ADMIN ROLE TO CREATE A NEW TRIP
+// TODO: REMOVE THIS CONSOLE.LOGS WHEN OK
+console.log('\n');
+console.log ('Running script from: public/js/newTrip.js');
+console.log('\n');
 
 const newTripHandler = async (event) => {
     event.preventDefault();
@@ -16,21 +20,24 @@ const newTripHandler = async (event) => {
     const trip_date = document.getElementById('trip_date').value.trim();
     const trip_image = document.querySelector('#uploadImage').files[0];
 
-    console.log(trip_image);
+    // TODO: REMOVE CONSOLELOG WHEN OK
+    console.log('\n');
+    console.log('Data from trip_image is: ', trip_image);
+    console.log('\n');
 
     if (trip_name && destination && trip_hours && trip_days && trip_kms && toll_cost && fuel_cost && food_cost && difficulty_level && trip_date && hotel_cost) {
         const response = await fetch('/api/newTrip/', {
-             method: 'POST',
-             body: JSON.stringify({ trip_name, destination, trip_hours, trip_days, trip_kms, toll_cost, fuel_cost, food_cost, hotel_cost, difficulty_level, trip_date }),
-             file: trip_image,
-             headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify({ trip_name, destination, trip_hours, trip_days, trip_kms, toll_cost, fuel_cost, food_cost, hotel_cost, difficulty_level, trip_date }),
+            file: trip_image,
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            console.log ('respuesta correcta');
+            // TODO: REMOVE THIS COMMENT FOR PROPER FUNCTIONALITY WHEN OK
             // document.location.replace('/');
         } else {
-            alert('Could not add new Trip.');
+            alert('Could not add new trip.');
         }
     }
 };
