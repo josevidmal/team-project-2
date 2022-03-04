@@ -1,3 +1,4 @@
+// HELPER TO FORMAT DATE & TIME
 module.exports = {
     format_time: (date) => {
       return date.toLocaleTimeString();

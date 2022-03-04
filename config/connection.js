@@ -1,8 +1,11 @@
+// REQUIRES FOR PACKAGES TO USE
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
+// SAVE SEQUELIZE TO A VARIABLE
 let sequelize;
 
+// START SEQUELIZE
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -18,4 +21,6 @@ if (process.env.JAWSDB_URL) {
     );   
 }
 
+
+// EXPORT MODULES
 module.exports = sequelize;
