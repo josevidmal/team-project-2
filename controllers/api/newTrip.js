@@ -3,32 +3,9 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const isAdmin = require('../../utils/admin');
 const { Trips } = require('../../models/index');
-const multer  = require('multer');
-const path = require('path');
-//const upload = multer({ dest: 'public/images/' })
+const multer = require("multer");
 
-
-// STORE IMAGE USING MULTER
-var storage = multer.diskStorage({
-    // SET DESTINATION FOR FILE
-    destination: (req, file, callBack) => {
-        callBack(null, './public/images/')     // './public/images/' directory name where save the file
-    },
-    // CREATE FILENAME ON SERVER
-    filename: (req, file, callBack) => {
-        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-});
-
-// ASIGN UPLOAD TO MULTER
-var upload = multer({
-    storage: storage
-});
-
-// ROUTE TO POST THE NEW TRIP TO THE SERVER
-router.post('/', withAuth, isAdmin, upload.single('image_input'), async (req, res) => {
-    // TODO: REMOVE THIS CONSOLOG WHEN OK
-    console.log("file dentro del route newTRIP",req.file);
+router.post('/', withAuth, isAdmin, async (req, res) => {
     try {
         const newTrip = await Trips.create({
             trip_name: req.body.trip_name,
@@ -42,7 +19,6 @@ router.post('/', withAuth, isAdmin, upload.single('image_input'), async (req, re
             hotel_cost: req.body.hotel_cost,
             difficulty_level: req.body.difficulty_level,
             trip_date: req.body.trip_date,
-            trip_image: req.body.trip_image
         });
         res.status(200).json(newTrip);
     } catch (err) {
@@ -50,6 +26,52 @@ router.post('/', withAuth, isAdmin, upload.single('image_input'), async (req, re
     }
 });
 
+const upload = multer({dest: 'public/images'});
 
-// MODULE EXPORTS
+/* const multerStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "public/images");
+    },
+    filename: (req, file, cb) => {
+        const ext = file.mimetype.split('/')[1];
+        cb(null, `files/admin-${file.filename}-${Date.now()}.${ext}`);
+    },
+});
+
+const multerFilter = (req, file, cb) => {
+    if (file.mimetype.split('/')[1] === "jpeg") {
+        cb(null, true);
+    } else {
+        cb(new Error("Not a jpeg file!"), false);
+    }
+};
+
+const upload = multer({
+    storage: multerStorage,
+    fileFilter: multerFilter,
+}) */
+
+router.post('/addimage', withAuth, isAdmin, upload.single('myFile'), async (req, res) => {
+    console.log(req.file);
+    try {
+        const tripImage = await Trips.update(
+            { trip_image: req.file.filename },
+            { where: { trip_image: null } }
+        )
+        
+        const tripsData = await Trips.findAll();
+
+        const trips = tripsData.map((trip) => trip.get({ plain: true }));
+        console.log("getting all trips handlebars", trips);
+
+        res.status(200).render('homepage', {
+            trips,
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
