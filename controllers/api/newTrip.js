@@ -2,9 +2,29 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const isAdmin = require('../../utils/admin');
 const { Trips } = require('../../models/index');
+const multer  = require('multer');
+const path = require('path');
+//const upload = multer({ dest: 'public/images/' })
 
-router.post('/', withAuth, isAdmin, async (req, res) => {
+
+
+var storage = multer.diskStorage({
+    destination: (req, file, callBack) => {
+        callBack(null, './public/images/')     // './public/images/' directory name where save the file
+    },
+    filename: (req, file, callBack) => {
+        callBack(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+});
+ 
+var upload = multer({
+    storage: storage
+});
+
+router.post('/', withAuth, isAdmin, upload.single('image_input'), async (req, res) => {
+    console.log("file dentro del route newTRIP",req.file);
     try {
+        
         const newTrip = await Trips.create({
             trip_name: req.body.trip_name,
             destination: req.body.destination,
