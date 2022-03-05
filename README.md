@@ -59,7 +59,7 @@ The application looks like this when it is used:
 * Sequelize package (Object Relational Mapping)
 * Connect-session-sequelize package
 * Dotenv package (Environment Variables)
-* Additional NPM package (to be defined)
+* Multer (additional technology)
 * Model View Controller (MVC) paradigm
 * Heroku
 
