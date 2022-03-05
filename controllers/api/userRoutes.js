@@ -10,7 +10,7 @@ const res = require('express/lib/response');
 router.post('/signup', async (req, res) => {
     try {
         const userData = await Users.create({
-            type: "admin",
+            type: "member",
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             nick_name: req.body.nick_name,
