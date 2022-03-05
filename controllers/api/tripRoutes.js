@@ -1,7 +1,9 @@
 // REQUIRE FOR PACKAGES TO USE
 const router = require('express').Router();
 const Trips = require('../../models/Trips');
+const User = require('../../models/User');
 const withAuth = require('../../utils/auth');
+const isAdmin = require('../../utils/admin');
 
 // ROUTE TO GET ALL TRIPS
 router.get('/', async (req, res) => {
@@ -42,6 +44,9 @@ router.post('/', async (req, res) => {
     return res.status(500).json(err);
   }
 });
+
+
+
 
 // MODULE EXPORT
 module.exports = router;

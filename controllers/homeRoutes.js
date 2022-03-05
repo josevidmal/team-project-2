@@ -66,19 +66,8 @@ router.get('/profile/mytrips', withAuth, async (req, res) => {
     try {
         const userTripsData = await UserTrips.findAll({
             where: {
-                user_id: req.session.user_id,
+                user_id: req.session.user_id
             },
-            // TODO: LEAVING AS COMMENT TO NOT BREAK FUNCTIONALITY
-            /* include: [
-                {
-                    model: Trips,
-                    attributes: ['trip_id', 'trip_name', 'destination', 'trip_date', 'trip_image'],
-                },
-                {
-                    model: Users,
-                    attributes: ['id']
-                }
-            ],*/
         });
 
         let trips = [];
@@ -94,9 +83,6 @@ router.get('/profile/mytrips', withAuth, async (req, res) => {
         })
 
         const parsedTripsData = tripData.map((trip) => trip.dataValues);
-
-        // TODO: LEAVING AS COMMENT TO NOT BREAK FUNCTIONALITY
-        // const userTrips = userTripsData.map((trip) => trip.get({ plain: true }));
 
         res.render('myTrips', {
             parsedTripsData,
@@ -136,6 +122,61 @@ router.get('/newTrip', withAuth, isAdmin, (req,res) => {
     });
     return;
 });
+
+// ROUTE TO DISPLAY ALL TRIP TO CHECK ASSISTANCE IF YOU ARE LOGGED IN AND YOU HAVE ADMIN ROLES
+router.get('/tripList', withAuth, isAdmin, async (req,res) => {
+    try {
+        const tripsData = await Trips.findAll();
+        const trips = tripsData.map((trip) => trip.get({ plain: true }));
+        res.render('tripList', {
+            trips,
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin
+        }); 
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
+// ROUTE TO GO TO THE TRIPS YOU HAVE BEEN TO. WIP
+router.get('/tripAssistant/:id', withAuth, isAdmin, async (req, res) => {
+    try {
+        console.log("req.param", req.params.id)
+        const tripsUserData = await UserTrips.findAll({
+            where: {
+                trip_id: req.params.id
+            },
+        });
+  console.log("tripsUserData", tripsUserData);
+        let users = [];
+  
+        tripsUserData.forEach(user => {
+            users.push(user.dataValues.user_id);
+        });
+
+        console.log("Users", users);
+        
+        const usersData = await Users.findAll({
+            where: {
+                id: users
+            }
+        })
+  console.log("Users", usersData);
+  
+        const parsedUsersData = usersData.map((user) => user.dataValues);
+  
+        console.log("parsedUsers", parsedUsersData);
+
+        res.render('tripAssistant', {
+            parsedUsersData,
+            logged_in: req.session.logged_in,
+            isAdmin: req.session.isAdmin,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  });  
 
 router.get('/newTrip/addimage', withAuth, isAdmin, (req, res) => {
     res.render('addImage', {
