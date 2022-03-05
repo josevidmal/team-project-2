@@ -5,7 +5,6 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers/index');
 const helpers = require('./utils/helpers');
-const helmet = require("helmet");
 const bodyParser = require("body-parser");
 
 const sequelize = require('./config/connection');
@@ -32,8 +31,8 @@ const sess = {
     })
 };
 
-// STARTS HELMET TO SHIELD THE APP
-app.use(helmet());
+
+
 app.use(session(sess));
 
 app.use(bodyParser.urlencoded({ extended: true }));
