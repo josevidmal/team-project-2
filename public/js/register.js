@@ -1,3 +1,4 @@
+// FUNCTION ALLOWS THE USER TO CREATE AN ACCOUNT
 const signupFormHandler = async (event) => {
     event.preventDefault();
 

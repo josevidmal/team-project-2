@@ -1,5 +1,4 @@
-console.log ('en el script');
-
+// FUNCTION ALLOWS USER WITH ADMIN ROLE TO CREATE A NEW TRIP
 const newTripHandler = async (event) => {
     event.preventDefault();
 
@@ -15,9 +14,8 @@ const newTripHandler = async (event) => {
     const difficulty_level = document.getElementById('difficulty').value.trim();
     const trip_date = document.getElementById('trip_date').value.trim();
 
-
     if (trip_name && destination && trip_hours && trip_days && trip_kms && toll_cost && fuel_cost && food_cost && difficulty_level && trip_date && hotel_cost) {
-        console.log('dentro del if');
+
         const response = await fetch('/api/newTrip/', {
              method: 'POST',
              body: JSON.stringify({ trip_name, destination, trip_hours, trip_days, trip_kms, toll_cost, fuel_cost, food_cost, hotel_cost, difficulty_level, trip_date }),
@@ -25,8 +23,7 @@ const newTripHandler = async (event) => {
         });
 
         if (response.ok) {
-            console.log ('respuesta correcta');
-            document.location.replace('/');
+            document.location.replace('/newTrip/addimage');
         } else {
             alert('Could not add new Trip.');
         }
