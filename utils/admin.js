@@ -1,8 +1,10 @@
 // HELPER TO VALIDATE USER HAS ADMIN ROLES
 const isAdmin = (req, res, next) => {
-    // If the user is not Admin, redirect the request to the profile route
-    if (!req.session.isAdmin) {
-      res.redirect('/profile');
+// If the user is not logged in, redirect the request to the login route
+
+    if (req.session.islogged_in && req.session.isAdmin) {
+      res.render('/newTrip');
+
     } else {
       next();
     }
