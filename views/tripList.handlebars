@@ -1,0 +1,24 @@
+{{!-- LIST OF TRIPS TO CHECK WHO ATTENDED THEM --}}
+
+<section>
+    <h1>Trips to Check Assintance</h1>
+    <h2>click on "check" to display assintance list</h2>
+    <table>
+        <section class="mytrips"></section>
+    <tr>
+        <th>Trip Id</th>
+        <th>Trip Name</th>
+        <th>Trip Date</th>
+        <th>Assintance</th>
+    </tr>
+    {{#each trips as |data|}}
+     <tr>
+        <td>{{trip_id}}</td>
+        <td>{{data.trip_name}}</td>
+        <td>Date: {{format_date data.trip_date}}</td>
+        <td><a href="/tripAssistant/{{trip_id}}">Check</a></td>
+     </tr>
+    {{/each}}
+    </table>
+   </section>
+</section>

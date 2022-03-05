@@ -1,0 +1,15 @@
+{{!-- LIST OF USERS TO WHO ATTENDED THE TRIP --}}
+
+<section>
+    <h1>Attendance</h1>
+    
+    <section class="mytrips"></section>   
+    <ol>
+        {{#each parsedUsersData as |data|}}
+        <li>
+            {{data.first_name}} {{data.last_name}} <span style="color:blue">{{data.email}}</span>        
+        </li>
+        {{/each}}
+    </ol>
+   </section>
+</section>
