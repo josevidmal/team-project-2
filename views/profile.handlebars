@@ -1,12 +1,121 @@
-{{!-- RENDER PROFILE --}}
-<section>
-    <h1>My Profile</h1>
-    <h3>User Type: {{type}}</h3>
-    <h3>Name: {{first_name}} {{last_name}}</h3>
-    <h3>Nickname: {{nick_name}}</h3>
-    <h3>Birthday: {{format_date date_of_birth}}</h3>
-    <h3>Mobile Phone: {{mobile_phone}}</h3>
-    <h3>Tier: {{tier}}</h3>
-    <h3>HOG ID: {{HUG_id}}</h3>
-    <h3>Email: {{email}}</h3>
-</section>
+<div class="container">
+    <div class="main-body">
+
+
+          <nav aria-label="breadcrumb" class="main-breadcrumb text-center container navbar-dark">
+        <h1>User Profile</h1>
+          </nav>
+
+
+          <div class="row gutters-sm justify-content-center">
+
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{first_name}}</h4>
+                      <p class="text-secondary mb-1">{{type}}</p>
+                      <p class="text-muted font-size-sm">{{nick_name}}</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+
+                  <div class="row">
+
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">User Type:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" value={{type}}>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <input type="text" class="form-control" value= {{first_name}} {{last_name}}>
+
+                    </div>
+                  </div>
+
+                  
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nickname:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" value= {{nick_name}}>
+
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Birthday: </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" value={{format_date date_of_birth}}>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Mobile Phone: </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <input type="text" class="form-control" value= {{mobile_phone}}>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Tier: </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <input type="text" class="form-control" value= {{tier}}>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">HOG ID: </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" value= {{HUG_id}}>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email: </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" value= {{email}}>
+                    </div>
+                  </div>
+                  <hr>
+                    </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+       </div>
+     </div>
+
+
