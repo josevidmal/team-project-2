@@ -1,5 +1,4 @@
-console.log ('en el script');
-
+// FUNCTION ALLOWS USER WITH ADMIN ROLE TO CREATE A NEW TRIP
 const newTripHandler = async (event) => {
     event.preventDefault();
 
@@ -14,21 +13,17 @@ const newTripHandler = async (event) => {
     const hotel_cost = document.getElementById('hotel_cost').value.trim();
     const difficulty_level = document.getElementById('difficulty').value.trim();
     const trip_date = document.getElementById('trip_date').value.trim();
-    const trip_image = document.querySelector('#uploadImage').files[0];
-
-    console.log(trip_image);
 
     if (trip_name && destination && trip_hours && trip_days && trip_kms && toll_cost && fuel_cost && food_cost && difficulty_level && trip_date && hotel_cost) {
+
         const response = await fetch('/api/newTrip/', {
              method: 'POST',
              body: JSON.stringify({ trip_name, destination, trip_hours, trip_days, trip_kms, toll_cost, fuel_cost, food_cost, hotel_cost, difficulty_level, trip_date }),
-             file: trip_image,
              headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            console.log ('respuesta correcta');
-            // document.location.replace('/');
+            document.location.replace('/newTrip/addimage');
         } else {
             alert('Could not add new Trip.');
         }

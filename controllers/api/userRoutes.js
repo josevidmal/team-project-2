@@ -1,3 +1,4 @@
+// REQUIRE FOR PACKAGES TO USE
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const isAdmin = require('../../utils/admin');
@@ -5,6 +6,7 @@ const { Users, UserTrips } = require('../../models/index');
 const req = require('express/lib/request');
 const res = require('express/lib/response');
 
+// ROUTE TO CREATE A NEW ACCOUNT/SIGNUP
 router.post('/signup', async (req, res) => {
     try {
         const userData = await Users.create({
@@ -31,6 +33,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+// IF YOU ALREADY HAVE AN ACCOUNT SIGN IN ROUTE
 router.post('/login', async (req, res) => {
     try {
         const userData = await Users.findOne({ where: { email: req.body.email } });
@@ -51,14 +54,12 @@ router.post('/login', async (req, res) => {
         let isAdmin = false;
         if (userData.type == "admin")
             isAdmin = true;
-        console.log("isAdmin:", isAdmin);
 
         req.session.save(() => {
             req.session.isAdmin = isAdmin;
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-
-
+            
             console.log('User type', userData.type);
 
             res.json({ user: userData, message: 'You have logged in' });
@@ -69,17 +70,19 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// LOG OUT ROUTE AND SESSION DESTROY
 router.post('/logout', (req, res) => {
     // When the user logs out, destroy the session
     if (req.session.logged_in) {
-      req.session.destroy(() => {
+        req.session.destroy(() => {
         res.status(204).end();
-      });
+        });
     } else {
-      res.status(404).end();
+        res.status(404).end();
     }
-  });
+});
 
+// USER TRIPS ROUTE
 router.post('/trips', withAuth, async (req, res) => {
     try {
         const userTripsData = await UserTrips.create({
@@ -93,4 +96,5 @@ router.post('/trips', withAuth, async (req, res) => {
     }
 });
 
-  module.exports = router;
+// MODULE EXPORTS
+module.exports = router;

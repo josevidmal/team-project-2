@@ -1,7 +1,9 @@
+// REQUIRE FOR PACKAGES TO USE
 const router = require('express').Router();
 const Trips = require('../../models/Trips');
 const withAuth = require('../../utils/auth');
 
+// ROUTE TO GET ALL TRIPS
 router.get('/', async (req, res) => {
   try {
     const allTrips = await Trips.findAll();
@@ -16,7 +18,7 @@ router.get('/', async (req, res) => {
 
 });
 
-
+// ROUTE TO GET TRIPS BY ID REQUIRES TO BE LOGGED IN
 router.get('/:id', withAuth, async (req, res) => {
   try {
     const tripData = await Trips.findByPk(req.params.id);
@@ -30,6 +32,7 @@ router.get('/:id', withAuth, async (req, res) => {
   
 });
 
+// ROUTE TO CREATE A NEW ROUTE FROM FORM INPUT
 router.post('/', async (req, res) => {
   try {
     const trip = await Trips.create(req.body);
@@ -40,4 +43,5 @@ router.post('/', async (req, res) => {
   }
 });
 
+// MODULE EXPORT
 module.exports = router;
