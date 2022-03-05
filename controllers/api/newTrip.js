@@ -56,7 +56,7 @@ router.post('/addimage', withAuth, isAdmin, upload.single('myFile'), async (req,
     try {
         const tripImage = await Trips.update(
             { trip_image: req.file.filename },
-            { where: { trip_image: null } }
+            { where: { trip_image: "9cff2b1e5c56fe396c8eac5a42a1e130" } }
         )
         
         const tripsData = await Trips.findAll();
