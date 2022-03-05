@@ -1,11 +1,11 @@
 {{!-- INFO FOR EACH TRIP/SINGLE --}}
-<section class="trip-info">
-    <h1>{{trip_name}}</h1>
+<section class="trip-info projects" id="projects" style="margin-top: 0%; ">
+    <h1 style="text-align: center; font-size: 2.3rem;">{{trip_name}}</h1>
     <div class="trip-image">
         <img src="/images/{{trip_image}}" alt="{{trip_name}}">
     </div>
     <div class="trip-briefing">
-        <ul>
+        <ul style="text-align: center;">
             <li>Destination: {{destination}}</li>
             <li>Date: {{format_date trip_date}}</li>
             <li>Trip Hours: {{trip_hours}}</li>
@@ -18,7 +18,7 @@
             <li>Difficulty: Level {{difficulty_level}} Trip</li>
         </ul>
     </div>
-    <button id="enroll-btn">Enroll</button>
+    <button  class="btn btn-primary btn-lg" id="enroll-btn" style="padding-left: 2.5rem; padding-right: 2.5rem; margin-left: 40%;">Enroll</button>
 </section>
 
 <script src="/js/enrollToTrip.js"></script>
