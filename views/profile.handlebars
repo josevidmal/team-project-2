@@ -13,9 +13,9 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="/images/biker-avatar.png" alt="Admin" class="rounded-circle avatar">
                     <div class="mt-3">
-                      <h4>{{first_name}}</h4>
+                      <h4>{{first_name}} {{last_name}}</h4>
                       <p class="text-secondary mb-1">{{type}}</p>
                       <p class="text-muted font-size-sm">{{nick_name}}</p>
 
@@ -37,7 +37,7 @@
                       <h6 class="mb-0">User Type:</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <input type="text" class="form-control" value={{type}}>
+                      <input type="text" class="form-control" value="{{type}}">
                     </div>
                   </div>
 
@@ -48,7 +48,7 @@
                       <h6 class="mb-0">Full Name:</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        <input type="text" class="form-control" value= {{first_name}} {{last_name}}>
+                        <input type="text" class="form-control" value="{{first_name}} {{last_name}}">
 
                     </div>
                   </div>

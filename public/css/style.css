@@ -179,8 +179,8 @@ nav ul li {
 }
 
 .core-intro img {
-  height: 25.5rem;
-  width: 32.5rem;
+  height: 11.5rem;
+  width: 11.5rem;
   margin-top: 2.8rem;
 }
 
@@ -538,4 +538,10 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #a79f94;
+}
+
+.avatar {
+  height: 10rem;
+  width: 10rem;
+  overflow: hidden;
 }
