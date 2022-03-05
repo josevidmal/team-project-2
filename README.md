@@ -1,5 +1,4 @@
-# team-project-2
-## Motorcycle Club
+# Team Project 2: Motorcycle Club
 
 ## Team Members
 
@@ -11,23 +10,40 @@
 
 ## Description
 
-This is a Node.js application for a Motorcycle Club that allows motorcycle riders to create an account to be initially a Potential member, with rights to view a basic profile and beginner’s events/trips information. After the user registers a specific amount of trip kilometers with the club, he or she is promoted to Active member, having the rights to see an advanced profile and information about special events/trips, only for Active members. The application has special members, as Administrators, that can check every member basic information and create events/trips.
+This is a Node.js application for a Motorcycle Clubs (MC) to allow better control of
+their members. The app allows you to create new users, new trips, and gives
+you an overview of the trip details, so the members know how much time and
+money they will spend going to the suggested destination. It has 2 types of
+member, regular member and admin member. Only administrator roles can
+create new trips, while both can have a display of their profile with a summary
+of their information.
+
+## Motivation
+
+Currentyl most of the MCs in the world can't have a proper managment
+of the people in the club due to a lack of tools to do so. The ones
+available are under monthly subscriptions, which not every club can
+afford. We want to give, both veteran and new riders the opportunity to
+keep track of their riding expirience while keeping it simple, friendly and
+useful.
 
 ## Usage
 
 The application looks like this when it is used:
 
-![Motorcycle Club 1]()
+![Motorcycle Club 1](/public/images/motorcycle-club-1.png)
 
-![Motorcycle Club 2]()
+![Motorcycle Club 2](/public/images/motorcycle-club-2.png)
 
-![Motorcycle Club 3]()
+![Motorcycle Club 3](/public/images/motorcycle-club-3.png)
 
-![Motorcycle Club 4]() 
+![Motorcycle Club 4](/public/images/motorcycle-club-4.png) 
 
-![Motorcycle Club 5]()
+![Motorcycle Club 5](/public/images/motorcycle-club-5.png)
 
-![Motorcycle Club 6]()
+![Motorcycle Club 6](/public/images/motorcycle-club-6.png)
+
+![Motorcycle Club 7](/public/images/motorcycle-club-7.png)
 
 ## Technologies Used
 
@@ -50,20 +66,14 @@ The application looks like this when it is used:
 ## Contact Information
 
 * GitHub Profile: [josevidmal](https://github.com/josevidmal)
-* email: josevidmal@gmail.com
 
 * GitHub Profile: [mariopatino](https://github.com/mariopatino)
-* email:
 
 * GitHub Profile: [StitchCodes](https://github.com/StitchCodes)
-* email:
 
 * GitHub Profile: [NA-Ag](https://github.com/NA-Ag)
-* email:
 
 * GitHub Profile: [kdher](https://github.com/kdher)
-* email:
-
 
 ## License
 
@@ -76,3 +86,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Contributing
+
+To contribute please follow the [Contributor Covenant v2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) guidelines.
